@@ -38,6 +38,7 @@ export default class LoginView extends Component {
                 <Image source={require('./assets/ucol.png')} style={styles.logo} resizeMode="contain" />
                 <TextInput
                     style={styles.TextInput}
+                    autoCapitalize='none'
                     onChangeText={(username) => this.setState({ username })}
                     value={this.state.username}
                     placeholder={'Correo electrónico*'}
@@ -73,24 +74,19 @@ const styles = StyleSheet.create({
         height: null,
         backgroundColor: 'white',
         alignItems: 'center',
+        justifyContent: 'space-evenly',
     },
     logo: {
         width: 200,
         height: 150,
         flexDirection: 'row',
         flexWrap: 'wrap',
-        marginTop: Platform.select({
-            ios: 90,
-            andoid: 50
-        }),
-        marginBottom: 25
     },
     TextInput: {
         height: 40,
         backgroundColor: '#f2f2f2',
         width: 230,
         color: '#000035',
-        marginBottom: 40,
         borderRadius: 5,
         padding: 5,
     },
